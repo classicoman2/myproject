@@ -2,6 +2,9 @@
   <div class="hello">
     <h1>{{ msg }} {{ any }}</h1>
     <p v-bind:class="valorClasse">{{description}}</p>
+    <ul>
+      <li v-for="n in nombres" v-bind:n="n" v-bind:key="n.id">{{n}}</li>
+    </ul>
   </div>
 </template>
 
@@ -16,7 +19,10 @@ export default {
   data: function() {
     return {
       description: "I am a Vue CLI Component",
-      valorClasse: "estil"
+      valorClasse: "estil",
+      nombres: [
+        "Maria", "Pep", "Lluis"
+      ]
     }
   }
 }
@@ -24,6 +30,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  background-color: aqua;
+}
+
 .estil {
   color:blue;
   font-size: 2.5em;
