@@ -3,7 +3,7 @@
     <h1>{{ msg }} {{ any }}</h1>
     <p v-bind:class="valorClasse">{{description}}</p>
     <ul>
-      <li v-for="n in nombres" v-bind:n="n" v-bind:key="n.id">{{n}}</li>
+      <li v-for="(n, i) in nombres" v-bind:n="n" v-bind:key="n.id">{{i}} = {{n}}</li>
     </ul>
   </div>
 </template>
